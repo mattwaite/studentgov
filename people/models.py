@@ -1,4 +1,6 @@
 from django.db import models
+from studentgov.government.models import Year, Body
+
 
 class Major(models.Model):
     major = models.CharField(max_length=255)
