@@ -18,7 +18,7 @@ class GovernmentName(models.Model):
     university = models.ForeignKey(University)
     url = models.URLField(verify_exists=True)
     email_address = models.EmailField(max_length=255, blank=True, null=True)
-    date_founded = models.CharField(blank=True, null=True)
+    date_founded = models.DateField(blank=True, null=True)
     def __unicode__(self):
         return self.full_name
 
@@ -39,7 +39,8 @@ class BodyType(models.Model):
 class Body(models.Model):
     government = models.ForeignKey(GovernmentName)
     body_type = models.ForeignKey(BodyType)
-    name = models.CharField()
+    name = models.CharField(max_length=255)
+    name_slug = models.SlugField()
     year = models.ForeignKey(Year)
     description = models.TextField(blank=True, null=True)
     main_governing_body = models.BooleanField()
