@@ -16,7 +16,7 @@ class GovernmentName(models.Model):
     slug = models.SlugField()
     abbrev = models.CharField(max_length=20)
     university = models.ForeignKey(University)
-    url = models.URLField(verify_exists)
+    url = models.URLField(verify_exists=True)
     email_address = models.EmailField(max_length=255, blank=True, null=True)
     date_founded = models.CharField(blank=True, null=True)
     def __unicode__(self):
@@ -25,8 +25,8 @@ class GovernmentName(models.Model):
 class Year(models.Model):
     title = models.CharField(max_length=255)
     slug = models.SlugField()
-    start_date = models.DateField
-    end_date = models.DateField
+    start_date = models.DateField(blank=True, null=True)
+    end_date = models.DateField(blank=True, null=True)
     def __unicode__(self):
         return self.title
     
@@ -35,3 +35,13 @@ class BodyType(models.Model):
     slug = models.SlugField()
     def __unicode__(self):
         return self.body_type
+
+class Body(models.Model):
+    government = models.ForeignKey(GovernmentName)
+    body_type = models.ForeignKey(BodyType)
+    name = models.CharField()
+    year = models.ForeignKey(Year)
+    description = models.TextField(blank=True, null=True)
+    main_governing_body = models.BooleanField()
+    def __unicode__(self):
+        return self.name
