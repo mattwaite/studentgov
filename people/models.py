@@ -1,6 +1,5 @@
 from django.db import models
-from studentgov.government.models import Major, HousingType, GreekAffiliation, Hometown, Race
-
+from government.models import Body, Year
 
 class Major(models.Model):
     major = models.CharField(max_length=255)
