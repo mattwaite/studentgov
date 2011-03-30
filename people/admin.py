@@ -7,8 +7,8 @@ class MajorAdmin(admin.ModelAdmin):
     search_fields = ['name']
 
 class HousingTypeAdmin(admin.ModelAdmin):
-    prepopulated_fields = {'street_slug': ('street', ) }
-    search_fields = ['street']
+    prepopulated_fields = {'name_slug': ('name', ) }
+    search_fields = ['name']
 
 class GreekAffiliationAdmin(admin.ModelAdmin):
     prepopulated_fields = {'name_slug': ('name', ) }
@@ -19,8 +19,8 @@ class HometownAdmin(admin.ModelAdmin):
     search_fields = ['name']
 
 class RaceAdmin(admin.ModelAdmin):
-    prepopulated_fields = {'title_slug': ('title', ) }
-    search_fields = ['title']
+    prepopulated_fields = {'name_slug': ('name', ) }
+    search_fields = ['name']
 
 admin.site.register(Major, MajorAdmin)
 admin.site.register(HousingType, HousingTypeAdmin)
