@@ -5,22 +5,27 @@ from studentgov.people.models import Major, HousingType, GreekAffiliation, Homet
 class MajorAdmin(admin.ModelAdmin):
     prepopulated_fields = {'name_slug': ('name', ) }
     search_fields = ['name']
+    pass
 
 class HousingTypeAdmin(admin.ModelAdmin):
     prepopulated_fields = {'name_slug': ('name', ) }
     search_fields = ['name']
+    pass
 
 class GreekAffiliationAdmin(admin.ModelAdmin):
     prepopulated_fields = {'name_slug': ('name', ) }
     search_fields = ['name']
+    pass
 
 class HometownAdmin(admin.ModelAdmin):
     prepopulated_fields = {'name_slug': ('name', ) }
     search_fields = ['name']
+    pass
 
 class RaceAdmin(admin.ModelAdmin):
     prepopulated_fields = {'name_slug': ('name', ) }
     search_fields = ['name']
+    pass
 
 admin.site.register(Major, MajorAdmin)
 admin.site.register(HousingType, HousingTypeAdmin)
