@@ -1,5 +1,5 @@
 from django.db import models
-from studentgov.government.models import Year, Body
+from studentgov.government.models import Major, HousingType, GreekAffiliation, Hometown, Race
 
 
 class Major(models.Model):
