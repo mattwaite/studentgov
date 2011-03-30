@@ -1,5 +1,5 @@
 from django.contrib import admin
-from studentgov.people.models import Major, HousingType, GreekAffiliation, Hometown, Race
+from studentgov.people.models import Major, HousingType, GreekAffiliation, Hometown, Race, Person
 
 class MajorAdmin(admin.ModelAdmin):
     prepopulated_fields = {'major_slug': ('major', ) }

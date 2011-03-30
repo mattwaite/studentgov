@@ -2,13 +2,13 @@ from django.contrib import admin
 from studentgov.government.models import University, GovernmentName, Year, BodyType
     
 class GovernmentNameAdmin(admin.ModelAdmin):
-    prepopulated_fields = {'slug': ('name',) }
+    prepopulated_fields = {'slug': ('full_name',) }
     
 class YearAdmin(admin.ModelAdmin):
-    prepopulated_fields = {'slug': ('year',) }
+    prepopulated_fields = {'slug': ('title',) }
     
 class BodyTypeAdmin(admin.ModelAdmin):
-    prepopulated_fields = {'slug': ('type',) }
+    prepopulated_fields = {'slug': ('body_type',) }
 
 admin.site.register(University)
 admin.site.register(GovernmentName, GovernmentNameAdmin)
