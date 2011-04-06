@@ -55,6 +55,7 @@ class PersonYear(models.Model):
         ('GR', 'Graduate'),
     )
     person = models.ForeignKey(Person)
+    title = models.CharField(max_length=150)
     year = models.CharField(max_length=2, choices=YEAR_IN_SCHOOL_CHOICES)
     major = models.ManyToManyField(Major, blank=True, null=True)
     housing_type = models.ForeignKey(HousingType, blank=True, null=True)
