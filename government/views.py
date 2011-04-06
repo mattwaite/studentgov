@@ -12,11 +12,11 @@ def year(request, year):
         'year': year,
 })
 
-#def body(request, year, body):
-#    return HttpResponse(body)
-#    
-#def name(request, year, body, name):
-#    return HttpResponse(name)
-#    
-#def standing(request):
-#    return HttpResponse("Senior.")
+def body(request, year, body):
+    return HttpResponse(body)
+    
+def name(request, year, body, name):
+    return HttpResponse(name)
+    
+def standing(request):
+    return HttpResponse("Senior.")

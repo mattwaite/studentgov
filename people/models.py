@@ -68,5 +68,9 @@ class BodyYear(models.Model):
     year = models.ForeignKey(Year)
     body = models.ForeignKey(Body)
     members = models.ManyToManyField(PersonYear)
+    def get_people_url(self):
+        return "/people/%s/" % self.year.slug
+    def get_government_url(self):
+        return "/government/%s/" % self.year.slug
     def __unicode__(self):
         return "%s %s" % (self.year, self.body)
