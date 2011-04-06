@@ -8,6 +8,8 @@ class University(models.Model):
     city = models.CharField(max_length=50)
     state = models.CharField(max_length=20)
     zip = models.CharField(max_length=5)
+    class Meta:
+        verbose_name_plural = "universities"
     def __unicode__(self):
         return self.full_name
     
@@ -44,5 +46,7 @@ class Body(models.Model):
     year = models.ForeignKey(Year)
     description = models.TextField(blank=True, null=True)
     main_governing_body = models.BooleanField()
+    class Meta:
+        verbose_name_plural = "bodies"
     def __unicode__(self):
         return self.name
