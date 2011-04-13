@@ -48,5 +48,7 @@ class Body(models.Model):
     main_governing_body = models.BooleanField()
     class Meta:
         verbose_name_plural = "bodies"
+    def get_absolute_url(self):
+        return "/government/%s/%s/" % (self.year.slug, self.name_slug)   
     def __unicode__(self):
         return self.name

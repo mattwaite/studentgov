@@ -61,6 +61,9 @@ class PersonYear(models.Model):
     housing_type = models.ForeignKey(HousingType, blank=True, null=True)
     greek = models.BooleanField()
     greek_affiliation = models.ManyToManyField(GreekAffiliation, blank=True, null=True)
+    body = models.ForeignKey(Body)
+    def get_absolute_url(self):
+        return "/government/%s/%s/%s/" % (self.body.year.slug, self.body.name_slug, self.person.name_slug)
     def __unicode__(self):
         return "%s %s" % (self.person, self.year)
 

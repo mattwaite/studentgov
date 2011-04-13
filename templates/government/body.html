@@ -1,0 +1,9 @@
+<h1>{{ government.name }}</h1>
+<p><strong>{{ government.government }}</strong></p>
+
+<h3>Members</h3>
+<ul>
+{% for members in person_year %}
+<li><a href="{{ members.get_absolute_url }}">{{ members.person }}</a></li>
+{% endfor %}
+</ul>
