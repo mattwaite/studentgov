@@ -1,0 +1,6 @@
+<h1>Select a person</h1>
+
+<ul>{% for item in personyears %}
+	<li><a href="{{ item.get_absolute_url }}">{{ item.person.last_name }}, {{ item.person.first_name }}</a></li>
+	{% endfor %}
+</ul>
