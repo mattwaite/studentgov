@@ -1,1 +1,10 @@
-<h1>{{ person.person.first_name }} {{ person.person.last_name }}</h1>
+<h1>{{ person.first_name }} {{ person.last_name }}</h1>
+<p>{{ person.bio }}</p>
+<p><strong>Hometown: </strong>{{ person.hometown }}<br>
+<strong>Gender: </strong>{{ person.gender }}<br>
+<strong>Race: </strong>{{ person.race }}</p>
+
+{% for item in personyears %}
+<p><strong>Major:</strong> {% for maj in item.major.all %}{{ maj.major }}{% if forloop.last %}{% else %}, {% endif %}{% endfor %}<br>
+<strong>Housing:</strong> {{ item.housing_type }}<br></p>
+{% endfor %}

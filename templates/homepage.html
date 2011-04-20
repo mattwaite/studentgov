@@ -1,11 +1,12 @@
-<h3>Browse student governments by year></h3>
+<h1>Welcome to the student government tracker for the {{ govt.full_name }}</h1>
+<h3>Browse student governments by year</h3>
 <ul>
 {% for object in bodyyears %}
 	<li><a href="{{ object.get_government_url }}">{{ object }}</a></li>
 {% endfor %}
 </ul>
 
-<h3>Browse student representatives by year></h3>
+<h3>Browse student representatives by year</h3>
 <ul>
 {% for object in bodyyears %}
 	<li><a href="{{ object.get_people_url }}">{{ object }}</a></li>

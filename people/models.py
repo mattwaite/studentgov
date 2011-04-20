@@ -61,9 +61,9 @@ class PersonYear(models.Model):
     housing_type = models.ForeignKey(HousingType, blank=True, null=True)
     greek = models.BooleanField()
     greek_affiliation = models.ManyToManyField(GreekAffiliation, blank=True, null=True)
-    body = models.ForeignKey(Body)
+    body = models.ForeignKey(Body, blank=True, null=True)
     def get_absolute_url(self):
-        return "/government/%s/%s/%s/" % (self.body.year.slug, self.body.name_slug, self.person.name_slug)
+        return "/people/details/%s/%d/" % (self.person.name_slug, self.person.id)
     def __unicode__(self):
         return "%s %s" % (self.person, self.year)
 
@@ -72,7 +72,7 @@ class BodyYear(models.Model):
     body = models.ForeignKey(Body)
     members = models.ManyToManyField(PersonYear)
     def get_people_url(self):
-        return "/people/%s/" % self.year.slug
+        return "/people/by-year/%s/" % self.year.slug
     def get_government_url(self):
         return "/government/%s/" % self.year.slug
     def __unicode__(self):
