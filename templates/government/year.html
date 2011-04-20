@@ -1,6 +1,14 @@
+{% extends "base.html" %}
+{% block content %}
+
+
+
 <h1>{{ year.title }}</h1>
 
 <ul>{% for item in governments %}
 	<li><a href="{{ item.get_absolute_url }}">{{ item.name }}</a></li>
 	{% endfor %}
 </ul>
+
+
+{% endblock %}
